@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div class="weather-app">
+      <header>
+        <form id="search-input">
+          <input
+            type="search"
+            placeholder="Enter city..."
+            required
+            id="app-search-input"
+            class="search-input"
+          />
+          <input type="submit" value="search" class="search-form" />
+        </form>
+      </header>
+      <main>
+        <div class="app-data">
+          <div>
+            <h1 class="weather-city" id="weather-city">Lisbon</h1>
+            <p class="app-details">
+              <span id="current-date"></span> </span
+              ><span id="description"></span>scatterd clouds
+              <br />
+              Humidity:<strong id="humidity"></strong>, Wind:<strong
+                id="wind-speed"
+              ></strong>
+            </p>
+          </div>
+          <div class="weather-temperature-display">
+            <div class="app-icon">⛅</div>
+            <div class="app-temperature" id="app-temperature">24</div>
+            <div class="app-unit">°C</div>
+          </div>
+        </div>
+      </main>
+      <footer>
+        This project was Coded by
+        <a href="https://github.com/Talentm36" target="_blank">Talent Maisvoreva</a>and
+        <a href="https://harmonious-brigadeiros-9cafef.netlify.app/" target="_blank"> is open sourced on Github</a> and
+        <a href="https://harmonious-brigadeiros-9cafef.netlify.app/" target="_blank"> hosted on Netlify</a>
+      </footer>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
