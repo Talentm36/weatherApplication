@@ -81,6 +81,8 @@ strong {
 .app-unit {
     font-size: 30px;
 }
+.weather-forecast{display: flex;
+justify-content: space-between;}
 
 
 footer {
