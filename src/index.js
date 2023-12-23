@@ -8,6 +8,7 @@ windElement.innerHTML=`${response.data.wind.speed}km/h`
 humidityElement.innerHTML=`${response.data.temperature.humidity}%`;
 descriptionElement.innerHTML=response.data.condition.description;
 temperatureElement.innerHTML=Math.round(appTemperature);
+
 }
 
 
@@ -15,6 +16,7 @@ function searchCity(city)
 {let apiKey="87d8tfb7621601o0c3b65f9a2b473214";
 let apiUrl=`https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
 axios.get(apiUrl).then(updateWeather);
+
 }
 
 
@@ -74,19 +76,17 @@ axios(apiUrl).then(displayForecast);}
 
 
 
-
-function displayForecast(){
-let forecastElement = document.querySelector("#forecast");
-
-let dayForecast =["Sun","Mon","Tue","Wed","Thur"];
+function displayForecast(response)
+{let dayForecast=["Sun","Mon","Tue","Wed","Thur"]
 let forecastHtml = "";
 dayForecast.forEach(function(day)
 {forecastHtml = forecastHtml +`<div class= "weather-forecast-day">
-<div class = "weather-forecast-date">${day}</div>
+<div class = "weather-forecast-date"> Sun </div>
 <div class = "weather-forecast-icon">⛅</div>
 <div class = "weather-forecast-temperatures"></div>
-<div class = "weather-forecast-temperature"><strong>15°C</strong></div>
-<div class = "weather-forecast-temperature-min"><strong>5°C</strong></div></div>`;})
+<div class = "weather-forecast-temperature"><strong>${day.temperature.maximun}°C</strong></div>
+<div class = "weather-forecast-temperature-min"><strong>9°C</strong></div></div>`;})
+let forecastElement = document.querySelector("#forecast");
 forecastElement.innerHTML=forecastHtml;
 }
 getForecast();
