@@ -7,7 +7,8 @@ let windElement=document.querySelector("#wind-speed");
 windElement.innerHTML=`${response.data.wind.speed}km/h`
 humidityElement.innerHTML=`${response.data.temperature.humidity}%`;
 descriptionElement.innerHTML=response.data.condition.description;
-temperatureElement.innerHTML=Math.round(appTemperature);}
+temperatureElement.innerHTML=Math.round(appTemperature);
+}
 
 
 function searchCity(city)
@@ -66,6 +67,14 @@ let currentDate = new Date();
 
 currentDateELement.innerHTML = formatDate(currentDate);
 
+function getForecast(city)
+{let apiKey ="87d8tfb7621601o0c3b65f9a2b473214"
+let apiUrl= `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`
+axios(apiUrl).then(displayForecast);}
+
+
+
+
 function displayForecast(){
 let forecastElement = document.querySelector("#forecast");
 
@@ -77,7 +86,7 @@ dayForecast.forEach(function(day)
 <div class = "weather-forecast-icon">⛅</div>
 <div class = "weather-forecast-temperatures"></div>
 <div class = "weather-forecast-temperature"><strong>15°C</strong></div>
-<div class = "weather-forecast-temperature-min">5°C</div></div>`;})
+<div class = "weather-forecast-temperature-min"><strong>5°C</strong></div></div>`;})
 forecastElement.innerHTML=forecastHtml;
-}displayForecast();
-
+}
+getForecast();
